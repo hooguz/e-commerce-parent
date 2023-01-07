@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  pim-db:
+    image: postgres
+    container_name: pim-db
+    volumes:
+      - pim-db-volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=pim
+    ports:
+      - "15432:5432"
+volumes:
+  pim-db-volume:
