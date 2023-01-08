@@ -5,13 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryResponse {
+public class StockDto {
 
     private Long id;
-    private String name;
-
+    private Long productId;
+    private Integer quantity;
+    private Date lastUpdate;
 }

@@ -24,8 +24,8 @@ public class GeneralExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(CategoryNotFoundException.class)
-    public ResponseEntity<?> handle(CategoryNotFoundException exception) {
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<?> handle(EntityNotFoundException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 

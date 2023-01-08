@@ -1,14 +1,12 @@
 package com.huseyinonur.pimservice.dto;
 
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CategoryRequest {
 
     private String name;
