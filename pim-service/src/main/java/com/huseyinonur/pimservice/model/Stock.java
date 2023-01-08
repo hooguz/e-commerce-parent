@@ -5,14 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "stock")
 @Entity
-public class Stock {
+public class Stock extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ public class Stock {
     private int quantity;
 
     @Column(name = "last_update", nullable = false)
-    private Date lastUpdate;
+    private LocalDateTime lastUpdate;
 
 }

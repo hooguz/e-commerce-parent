@@ -8,14 +8,11 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class StockDto extends BaseDto {
+@AllArgsConstructor
+public class BaseDto {
 
-    private Long id;
-    private Long productId;
-    private Integer quantity;
-    private LocalDateTime lastUpdate;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 }

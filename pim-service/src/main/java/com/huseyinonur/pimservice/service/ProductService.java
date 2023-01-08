@@ -41,8 +41,11 @@ public class ProductService {
     public ProductDto updateProduct(Long id, ProductDto productDto) {
         Optional<Product> productOpt = productRepository.findById(id);
         if (productOpt.isPresent()) {
-            Product product = productMapper.toEntity(productDto);
-            product.setId(id);
+            Product product = productOpt.get();
+            product.setName(productDto.getName());
+            product.setPrice(productDto.getPrice());
+            product.setStock(productDto.getStock());
+            product.getCategory().setId(productDto.getCategoryId());
             productRepository.save(product);
             return productMapper.toDto(product);
         } else {

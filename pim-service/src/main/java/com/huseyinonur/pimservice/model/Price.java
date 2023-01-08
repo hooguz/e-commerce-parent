@@ -6,14 +6,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "price")
 @Entity
-public class Price {
+public class Price extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class Price {
     private Product product;
 
     @Column(nullable = false)
-    private BigDecimal amount;
+    private BigDecimal price;
 
     @Column(name = "start_date", nullable = false)
-    private Date startDate;
+    private LocalDateTime startDate;
 
 
 }

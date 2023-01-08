@@ -4,10 +4,9 @@ package com.huseyinonur.pimservice.dto;
 import lombok.*;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryRequest {
+public class CategoryRequest extends BaseDto {
 
     private String name;
 

@@ -4,10 +4,7 @@ package com.huseyinonur.pimservice.mapper;
 import com.huseyinonur.pimservice.dto.CategoryRequest;
 import com.huseyinonur.pimservice.dto.CategoryResponse;
 import com.huseyinonur.pimservice.model.Category;
-import org.mapstruct.Mapper;
-import org.mapstruct.MapperConfig;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
@@ -20,6 +17,8 @@ public interface CategoryMapper {
 
     Category toEntity(CategoryRequest request);
 
+    @Mapping(target = "createdAt", source = "createdAt")
+    @Mapping(target = "updatedAt", source = "updatedAt")
     CategoryResponse toResponseDto(Category entity);
 
     List<CategoryResponse> toResponseDtoList(List<Category> categories);

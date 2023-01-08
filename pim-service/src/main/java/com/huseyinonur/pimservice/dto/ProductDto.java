@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductDto {
+public class ProductDto extends BaseDto {
 
     private Long id;
     private String name;

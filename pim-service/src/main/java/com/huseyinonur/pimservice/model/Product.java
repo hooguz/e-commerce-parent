@@ -1,5 +1,7 @@
 package com.huseyinonur.pimservice.model;
 
+import com.huseyinonur.pimservice.util.BaseEntityListener;
+import com.huseyinonur.pimservice.util.ProductEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +14,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "product")
 @Entity
-public class Product {
+@EntityListeners(ProductEntityListener.class)
+public class Product extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

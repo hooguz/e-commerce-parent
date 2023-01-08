@@ -6,10 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryResponse {
+public class CategoryResponse extends BaseDto {
 
     private Long id;
     private String name;

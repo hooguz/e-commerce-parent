@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Table(name = "category")
 @Entity
-public class Category {
+public class Category extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

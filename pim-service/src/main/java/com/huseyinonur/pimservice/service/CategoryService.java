@@ -42,12 +42,13 @@ public class CategoryService {
     public CategoryResponse updateCategory(Long id, CategoryRequest categoryRequest) {
         Optional<Category> categoryOpt = categoryRepository.findById(id);
         if (categoryOpt.isPresent()) {
-            Category category = categoryMapper.toEntity(categoryRequest);
-            category.setId(id);
+            Category category = categoryOpt.get();
+            category.setName(categoryRequest.getName());
             categoryRepository.save(category);
             return categoryMapper.toResponseDto(category);
+        } else {
+            throw new EntityNotFoundException("Category not found with id: " + id);
         }
-        throw new EntityNotFoundException("Category not found with id: " + id);
     }
 
     public Long deleteCategory(Long id) {
