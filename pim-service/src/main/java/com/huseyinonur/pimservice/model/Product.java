@@ -1,7 +1,6 @@
 package com.huseyinonur.pimservice.model;
 
-import com.huseyinonur.pimservice.util.BaseEntityListener;
-import com.huseyinonur.pimservice.util.ProductEntityListener;
+import com.huseyinonur.pimservice.entitylisteners.ProductEntityListener;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

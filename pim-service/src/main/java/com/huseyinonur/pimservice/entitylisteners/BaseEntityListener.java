@@ -1,4 +1,4 @@
-package com.huseyinonur.pimservice.util;
+package com.huseyinonur.pimservice.entitylisteners;
 
 import com.huseyinonur.pimservice.model.BaseEntity;
 

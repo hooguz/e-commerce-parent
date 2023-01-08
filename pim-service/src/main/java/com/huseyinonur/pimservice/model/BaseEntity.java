@@ -1,6 +1,6 @@
 package com.huseyinonur.pimservice.model;
 
-import com.huseyinonur.pimservice.util.BaseEntityListener;
+import com.huseyinonur.pimservice.entitylisteners.BaseEntityListener;
 import lombok.Data;
 
 import javax.persistence.EntityListeners;

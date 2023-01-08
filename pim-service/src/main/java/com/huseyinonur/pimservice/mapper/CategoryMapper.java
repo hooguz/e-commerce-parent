@@ -17,8 +17,9 @@ public interface CategoryMapper {
 
     Category toEntity(CategoryRequest request);
 
-    @Mapping(target = "createdAt", source = "createdAt")
-    @Mapping(target = "updatedAt", source = "updatedAt")
+    @Mappings({
+            @Mapping(target = "createdAt", source = "createdAt"),
+            @Mapping(target = "updatedAt", source = "updatedAt")})
     CategoryResponse toResponseDto(Category entity);
 
     List<CategoryResponse> toResponseDtoList(List<Category> categories);

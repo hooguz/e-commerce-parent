@@ -1,7 +1,8 @@
-package com.huseyinonur.pimservice.util;
+package com.huseyinonur.pimservice.entitylisteners;
 
 import com.huseyinonur.pimservice.dto.PriceDto;
 import com.huseyinonur.pimservice.dto.StockDto;
+import com.huseyinonur.pimservice.exception.EntityNotFoundException;
 import com.huseyinonur.pimservice.model.Product;
 import com.huseyinonur.pimservice.service.PriceService;
 import com.huseyinonur.pimservice.service.StockService;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.PostPersist;
 import javax.persistence.PostUpdate;
+import javax.persistence.PreRemove;
 import java.time.LocalDateTime;
 
 @Component
@@ -22,12 +24,8 @@ public class ProductEntityListener {
     private static StockService stockService;
 
     @Autowired
-    public void setPriceService(PriceService priceService) {
+    public void init(PriceService priceService, StockService stockService) {
         ProductEntityListener.priceService = priceService;
-    }
-
-    @Autowired
-    public void setStockService(StockService stockService) {
         ProductEntityListener.stockService = stockService;
     }
 
@@ -50,6 +48,21 @@ public class ProductEntityListener {
             stockService.createStock(stockDto);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+
+    @PreRemove
+    private void onDestroy(Product product) {
+        try {
+            priceService.deleteAllPricesByProductId(product.getId());
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            stockService.deleteAllStocksByProductId(product.getId());
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
         }
     }
 

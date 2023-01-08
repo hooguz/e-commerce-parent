@@ -2,8 +2,8 @@ package com.huseyinonur.pimservice.service;
 
 import com.huseyinonur.pimservice.dto.CategoryRequest;
 import com.huseyinonur.pimservice.dto.CategoryResponse;
-import com.huseyinonur.pimservice.exception.EntityNotFoundException;
 import com.huseyinonur.pimservice.exception.ContentNotFoundException;
+import com.huseyinonur.pimservice.exception.EntityNotFoundException;
 import com.huseyinonur.pimservice.mapper.CategoryMapper;
 import com.huseyinonur.pimservice.model.Category;
 import com.huseyinonur.pimservice.repository.CategoryRepository;
