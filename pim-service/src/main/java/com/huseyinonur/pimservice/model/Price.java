@@ -28,5 +28,4 @@ public class Price extends BaseEntity {
     @Column(name = "start_date", nullable = false)
     private LocalDateTime startDate;
 
-
 }

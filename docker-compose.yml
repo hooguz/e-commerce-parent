@@ -24,9 +24,11 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=om
     ports:
-      - "5432:5432"
+#      - "5432:5432"
+      - "5433:5432"
     expose:
-      - "5432"
+#      - "5432"
+      - "5433"
   pim-service:
     image: pim-service
     container_name: pim-service
